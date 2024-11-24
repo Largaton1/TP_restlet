@@ -15,21 +15,19 @@ import org.restlet.routing.Router;
  * @author msimonin
  *
  */
-public class MyTwitterApplication extends Application
-{
+public class MyTwitterApplication extends Application {
 
-    public MyTwitterApplication(Context context)
-    {
+    public MyTwitterApplication(Context context) {
         super(context);
     }
 
     @Override
-    public Restlet createInboundRoot()
-    {
+    public Restlet createInboundRoot() {
         Router router = new Router(getContext());
         router.attach("/users", UsersResource.class);
         router.attach("/users/{userId}", UserResource.class);
         router.attach("/users/{userId}/tweets", TweetResource.class);
+        router.attach("/users/tweets", TweetResource.class);
         return router;
     }
 }

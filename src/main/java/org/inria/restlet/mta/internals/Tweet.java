@@ -3,7 +3,7 @@ package org.inria.restlet.mta.internals;
 import java.util.Date;
 
 public class Tweet {
-private int id;
+    private int id;
     private String content;
     private Date timestamp;
 
@@ -20,6 +20,7 @@ private int id;
     public void setContent(String content) {
         this.content = content;
     }
+
     public Date getTimestamp() {
         return timestamp;
     }
@@ -35,6 +36,5 @@ private int id;
     public int getId() {
         return id;
     }
-
 
 }

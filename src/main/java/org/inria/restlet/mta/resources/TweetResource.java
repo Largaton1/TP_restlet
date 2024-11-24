@@ -1,5 +1,8 @@
 package org.inria.restlet.mta.resources;
+
+import java.util.Collection;
 import java.util.List;
+
 import org.inria.restlet.mta.database.InMemoryDatabase;
 import org.inria.restlet.mta.internals.Tweet;
 import org.inria.restlet.mta.internals.User;
@@ -78,7 +81,8 @@ public class TweetResource extends ServerResource {
 
         // Validate the input
         if (!jsonObject.has("content") || jsonObject.getString("content").trim().isEmpty()) {
-            throw new ResourceException(org.restlet.data.Status.CLIENT_ERROR_BAD_REQUEST, "Content is required and cannot be empty");
+            throw new ResourceException(org.restlet.data.Status.CLIENT_ERROR_BAD_REQUEST,
+                    "Content is required and cannot be empty");
         }
 
         String content = jsonObject.getString("content").trim();
@@ -96,5 +100,24 @@ public class TweetResource extends ServerResource {
         tweetObject.put("content", tweet.getContent());
 
         return new JsonRepresentation(tweetObject);
+    }
+
+    /**
+     * GET method: Return all tweets.
+     */
+    @Get("json")
+    public JsonRepresentation getAllTweets() {
+        Collection<Tweet> tweets = db_.getAllTweets();
+
+        JSONArray tweetsArray = new JSONArray();
+        for (Tweet tweet : tweets) {
+            JSONObject tweetObject = new JSONObject();
+            tweetObject.put("id", tweet.getId());
+            tweetObject.put("content", tweet.getContent());
+            tweetObject.put("userId", tweet.getId());
+            tweetsArray.put(tweetObject);
+        }
+
+        return new JsonRepresentation(tweetsArray);
     }
 }

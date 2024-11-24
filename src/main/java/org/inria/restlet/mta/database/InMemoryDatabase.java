@@ -14,6 +14,7 @@ import org.inria.restlet.mta.internals.User;
  *
  * @author ctedeschi
  * @author msimonin
+ * @author lkone
  */
 public class InMemoryDatabase {
 
