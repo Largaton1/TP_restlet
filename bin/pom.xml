@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>kone.nassara.istic</groupId>
-  <artifactId>m1</artifactId>
+  <groupId>org.inria.restlet</groupId>
+  <artifactId>mta</artifactId>
   <version>0.0.1</version>
-  <name>Restaurant Application</name>
-  <description>Restaurant Application</description>
+  <name>My Twitter Application</name>
+  <description>My Twitter Application</description>
 
   <repositories>
 	  <repository>
@@ -28,7 +28,7 @@
         	<configuration>
             <archive>
                 <manifest>
-                  <mainClass>${project.groupId}.m1.main.Main</mainClass>
+                  <mainClass>${project.groupId}.mta.main.Main</mainClass>
                 </manifest>
             </archive>
         </configuration>
@@ -66,8 +66,8 @@
 	      <artifactId>maven-compiler-plugin</artifactId>
 	      <version>3.8.1</version>
 	      <configuration>
-	       <source>11</source>
-	       <target>11</target>
+	       <source>8</source>
+	       <target>8</target>
 	      </configuration>
 	  </plugin>
 
@@ -107,12 +107,6 @@
 		    <artifactId>org.restlet.ext.xml</artifactId>
 		    <version>2.4.3</version>
 		</dependency>
-		<dependency>
-    <groupId>org.restlet.jee</groupId>
-    <artifactId>org.restlet.ext.jackson</artifactId>
-    <version>2.4.3</version>
-</dependency>
-
 
 	</dependencies>
 

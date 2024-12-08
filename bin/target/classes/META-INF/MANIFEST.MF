@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: LARGATON
+Build-Jdk: 17.0.6
+Main-Class: org.inria.restlet.mta.main.Main
+Created-By: Maven Integration for Eclipse
+
